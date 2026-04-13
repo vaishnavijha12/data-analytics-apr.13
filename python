@@ -1,0 +1,15 @@
+import pandas as pd
+
+data = [
+    ['ram', 26, 'engineer'],
+    ['michal', 35, 'psychologist'],
+    ['denash', 25, 'nurse'],
+    ['mohan', 23, 'doctor'],
+    ['rethesh', 30, 'engineer'],
+    ['sugu', 28, 'teacher'],
+    ['anitha', 30, 'navigator'],
+    ['juliy', 32, 'marine engineer']
+]
+
+df = pd.DataFrame(data, columns=['name', 'age', 'work'])
+print(df)
