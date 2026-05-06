@@ -1,15 +1,32 @@
 import pandas as pd
 
+# Sports dataset
 data = [
-    ['ram', 26, 'engineer'],
-    ['michal', 35, 'psychologist'],
-    ['denash', 25, 'nurse'],
-    ['mohan', 23, 'doctor'],
-    ['rethesh', 30, 'engineer'],
-    ['sugu', 28, 'teacher'],
-    ['anitha', 30, 'navigator'],
-    ['juliy', 32, 'marine engineer']
+    ['Player1', 'Team A', 5, 2],
+    ['Player2', 'Team B', 3, 4],
+    ['Player3', 'Team A', 6, 1],
+    ['Player4', 'Team B', 2, 3],
+    ['Player5', 'Team A', 4, 2],
+    ['Player6', 'Team B', 1, 5]
 ]
 
-df = pd.DataFrame(data, columns=['name', 'age', 'work'])
+# Create DataFrame
+df = pd.DataFrame(data, columns=['Player', 'Team', 'Goals', 'Assists'])
+
+# Display dataset
+print("Sports Dataset:\n")
 print(df)
+
+# Goals analysis
+print("\nTotal Goals by Team:\n")
+print(df.groupby("Team")["Goals"].sum())
+
+# Assists analysis
+print("\nTotal Assists by Team:\n")
+print(df.groupby("Team")["Assists"].sum())
+
+# Find top scorer
+top_scorer = df.loc[df["Goals"].idxmax()]
+
+print("\nTop Scorer:\n")
+print(top_scorer)
